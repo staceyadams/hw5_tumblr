@@ -11,13 +11,7 @@ import UIKit
 class TabBarViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var homeTabButton: UIButton!
-    @IBOutlet weak var searchTabButton: UIButton!
-    @IBOutlet weak var composeTabButton: UIButton!
-    @IBOutlet weak var accountTabButton: UIButton!
-    @IBOutlet weak var trendingTabButton: UIButton!
-   
-    
+    // hook up buttons as an outlet collection:
     @IBOutlet var buttons: [UIButton]!
     var viewControllersArray = [UIViewController]()
     var selectedIndex: Int! = 0
@@ -47,7 +41,7 @@ class TabBarViewController: UIViewController {
         
         viewControllersArray = [homeVC, searchVC, accountVC, trendingVC]
         
-        didPressTabButton(homeTabButton)
+      //  didPressTabButton(homeTabButton)
         
         // show home as the default on initial load
 //        currentVC = trendingVC

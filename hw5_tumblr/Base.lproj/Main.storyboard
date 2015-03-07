@@ -45,9 +45,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="compose_button"/>
-                                        <connections>
-                                            <segue destination="11Q-UW-gQF" kind="modal" id="mPe-gw-E39"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9IR-kq-7Si" userLabel="AccountButton">
                                         <rect key="frame" x="204" y="6" width="50" height="35"/>
@@ -83,12 +80,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="accountTabButton" destination="9IR-kq-7Si" id="Nyj-n3-fPE"/>
-                        <outlet property="composeTabButton" destination="jHf-v4-KFg" id="Idh-Tq-A1e"/>
                         <outlet property="contentView" destination="X2B-Gr-Gx1" id="emC-YU-T6q"/>
-                        <outlet property="homeTabButton" destination="A7J-hN-bMY" id="GQ4-yY-3ip"/>
-                        <outlet property="searchTabButton" destination="sRP-fr-Tnc" id="Wdf-gR-fHC"/>
-                        <outlet property="trendingTabButton" destination="DaJ-tN-8UO" id="9Rs-uT-LL6"/>
                         <outletCollection property="buttons" destination="A7J-hN-bMY" collectionClass="NSMutableArray" id="VWe-bJ-oK5"/>
                         <outletCollection property="buttons" destination="sRP-fr-Tnc" collectionClass="NSMutableArray" id="kiZ-lA-qrF"/>
                         <outletCollection property="buttons" destination="9IR-kq-7Si" collectionClass="NSMutableArray" id="hXh-hS-5zB"/>
