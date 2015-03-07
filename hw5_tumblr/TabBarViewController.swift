@@ -18,14 +18,19 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var trendingTabButton: UIButton!
    
     
-    // reference the other VCs
-    var homeVC: HomeViewController!
-    var searchVC: SearchViewController!
-    var composeVC: ComposeViewController!
-    var accountVC: AccountViewController!
-    var trendingVC: TrendingViewController!
-    var currentVC: UIViewController!
-    var currentTabButton: UIButton!
+    @IBOutlet var buttons: [UIButton]!
+    var viewControllersArray = [UIViewController]()
+    var selectedIndex: Int! = 0
+    
+    // reference the other VCs. We use UIViewController! instead of the VC file because of the array
+    var homeVC: UIViewController!
+    var searchVC: UIViewController!
+    var composeVC: UIViewController!
+    var accountVC: UIViewController!
+    var trendingVC: UIViewController!
+    
+//    var currentVC: UIViewController!
+//    var currentTabButton: UIButton!
     
     
     override func viewDidLoad()
@@ -34,16 +39,20 @@ class TabBarViewController: UIViewController {
 
         // create the view so content can be pulled into the tabVC
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        homeVC = storyboard.instantiateViewControllerWithIdentifier("homeStory") as HomeViewController
-        searchVC = storyboard.instantiateViewControllerWithIdentifier("searchStory") as SearchViewController
-        composeVC = storyboard.instantiateViewControllerWithIdentifier("composeStory") as ComposeViewController
-        accountVC = storyboard.instantiateViewControllerWithIdentifier("accountStory") as AccountViewController
-        trendingVC = storyboard.instantiateViewControllerWithIdentifier("trendingStory") as TrendingViewController
+        homeVC = storyboard.instantiateViewControllerWithIdentifier("homeStory") as UIViewController
+        searchVC = storyboard.instantiateViewControllerWithIdentifier("searchStory") as UIViewController
+        composeVC = storyboard.instantiateViewControllerWithIdentifier("composeStory") as UIViewController
+        accountVC = storyboard.instantiateViewControllerWithIdentifier("accountStory") as UIViewController
+        trendingVC = storyboard.instantiateViewControllerWithIdentifier("trendingStory") as UIViewController
+        
+        viewControllersArray = [homeVC, searchVC, accountVC, trendingVC]
+        
+        didPressTabButton(homeTabButton)
         
         // show home as the default on initial load
-        currentVC = trendingVC
-        currentTabButton = trendingTabButton
-        didPressTrending(self)
+//        currentVC = trendingVC
+//        currentTabButton = trendingTabButton
+//        didPressTrending(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,91 +61,28 @@ class TabBarViewController: UIViewController {
     }
     
     
-//    @IBAction func didPressTabButton(sender: AnyObject)
-//    {
-//        if (sender: homeTabButton)
-//        {
-//            
-//        }
-//    }
-    
-    
-    
-    
-    @IBAction func didPressHome(sender: AnyObject)
-    {
-        removeChildView(currentVC) // remove existing view before adding a new view. Uses func created below.
-        currentTabButton.selected = false
-        currentTabButton = homeTabButton
-        currentTabButton.selected = true
-        addChildViewController(homeVC) // add new view
-        var homeView = homeVC.view // sets size of content view
-        homeView.frame = contentView.frame // sets size of content view to fit into container view
-        contentView.addSubview(homeView) // get view from blue VC and put it into our container on the tab VC
-        homeVC.didMoveToParentViewController(self) // attaches child VC to tab bar controller (part 2)
-        currentVC = homeVC // set this as the new current VC
 
-    }
-    
-    @IBAction func didPressSearch(sender: AnyObject)
+    @IBAction func didPressTabButton(sender: AnyObject)
     {
-        removeChildView(currentVC)
-        currentTabButton.selected = false
-        currentTabButton = searchTabButton
-        currentTabButton.selected = true
-        addChildViewController(searchVC)
-        var searchView = searchVC.view
-        searchView.frame = contentView.frame
-        contentView.addSubview(searchView)
-        searchVC.didMoveToParentViewController(self)
-        currentVC = searchVC
+        // println(sender.tag)
         
-
+        // remove the stuff from the existing view
+        removeChildView(viewControllersArray[selectedIndex]) // remove existing view before adding a new view. Uses func created below.
+        buttons[selectedIndex].selected = false
         
+        // set SelectedIndex to the current view (array number)
+        selectedIndex = sender.tag
         
+        // add in the new view
+        buttons[selectedIndex].selected = true
+        addChildViewController(viewControllersArray[selectedIndex]) // add new view
+        var tabContentView = viewControllersArray[selectedIndex].view // sets size of content view
+        tabContentView.frame = contentView.frame // sets size of content view to fit into container view
+        contentView.addSubview(tabContentView) // get view from the content VC and put it into our container on the tab VC
+        viewControllersArray[selectedIndex].didMoveToParentViewController(self) // attaches child VC to tab bar controller
+    
     }
     
-//    @IBAction func didPressCompose(sender: AnyObject)
-//    {
-//        removeChildView(currentVC)
-//        currentTabButton.selected = false
-//        currentTabButton = composeTabButton
-//        currentTabButton.selected = true
-//        addChildViewController(composeVC)
-//        var composeView = composeVC.view
-//        composeView.frame = contentView.frame
-//        contentView.addSubview(composeView)
-//        composeVC.didMoveToParentViewController(self)
-//        currentVC = composeVC
-//    }
-    
-    @IBAction func didPressAccount(sender: AnyObject)
-    {
-        removeChildView(currentVC)
-        currentTabButton.selected = false
-        currentTabButton = accountTabButton
-        currentTabButton.selected = true
-        addChildViewController(accountVC)
-        var accountView = accountVC.view
-        accountView.frame = contentView.frame
-        contentView.addSubview(accountView)
-        accountVC.didMoveToParentViewController(self)
-        currentVC = accountVC
-    }
-    
-    @IBAction func didPressTrending(sender: AnyObject)
-    {
-        removeChildView(currentVC)
-        currentTabButton.selected = false
-        currentTabButton = trendingTabButton
-        currentTabButton.selected = true
-        addChildViewController(trendingVC)
-        var trendingView = trendingVC.view
-        trendingView.frame = contentView.frame
-        contentView.addSubview(trendingView)
-        trendingVC.didMoveToParentViewController(self)
-        currentVC = trendingVC
-    }
     
     
     func removeChildView(content: UIViewController)
@@ -146,6 +92,7 @@ class TabBarViewController: UIViewController {
         content.removeFromParentViewController()
     }
     
+
     
     
     /*
