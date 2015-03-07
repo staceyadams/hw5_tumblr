@@ -45,6 +45,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="compose_button"/>
+                                        <connections>
+                                            <action selector="didPressCompose:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wzR-HM-pAG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9IR-kq-7Si" userLabel="AccountButton">
                                         <rect key="frame" x="204" y="6" width="50" height="35"/>
@@ -85,11 +88,12 @@
                         <outletCollection property="buttons" destination="sRP-fr-Tnc" collectionClass="NSMutableArray" id="kiZ-lA-qrF"/>
                         <outletCollection property="buttons" destination="9IR-kq-7Si" collectionClass="NSMutableArray" id="hXh-hS-5zB"/>
                         <outletCollection property="buttons" destination="DaJ-tN-8UO" collectionClass="NSMutableArray" id="Kdt-J6-ppa"/>
+                        <segue destination="11Q-UW-gQF" kind="modal" identifier="composeSegue" id="xuo-RQ-kue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="488"/>
+            <point key="canvasLocation" x="301" y="464"/>
         </scene>
         <!--Home-->
         <scene sceneID="1Gq-un-hqr">
@@ -213,12 +217,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.21960784310000001" green="0.2901960784" blue="0.37647058820000001" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.2901960784" blue="0.37647058820000001" alpha="0.5" colorSpace="deviceRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAA-fh-KIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="1135"/>
+            <point key="canvasLocation" x="301" y="1170"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="AuV-oZ-KCu">
@@ -313,19 +317,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lo-d8-H9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-107" y="1792"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="pfK-Qf-HJT">
-            <objects>
-                <viewController id="7hf-Rd-Ge0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tjq-Gw-t2E">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tw9-s5-kbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

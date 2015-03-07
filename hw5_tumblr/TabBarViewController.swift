@@ -8,7 +8,9 @@
 
 import UIKit
 
-class TabBarViewController: UIViewController {
+class TabBarViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+    
+    var isPresenting: Bool = true
 
     @IBOutlet weak var contentView: UIView!
     // hook up buttons as an outlet collection:
@@ -41,12 +43,11 @@ class TabBarViewController: UIViewController {
         
         viewControllersArray = [homeVC, searchVC, accountVC, trendingVC]
         
-      //  didPressTabButton(homeTabButton)
         
         // show home as the default on initial load
-//        currentVC = trendingVC
-//        currentTabButton = trendingTabButton
-//        didPressTrending(self)
+        didPressTabButton(buttons[0])
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,12 +79,68 @@ class TabBarViewController: UIViewController {
     }
     
     
-    
     func removeChildView(content: UIViewController)
     {
         content.willMoveToParentViewController(nil)
         content.view.removeFromSuperview()
         content.removeFromParentViewController()
+    }
+    
+    
+    
+    // CUSTOM TRANSITION
+    
+    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = true
+        return self
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = false
+        return self
+    }
+    
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        // The value here should be the duration of the animations scheduled in the animationTransition method
+        return 0.4
+    }
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        println("animating transition")
+        var containerView = transitionContext.containerView()
+        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        
+        if (isPresenting) {
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                toViewController.view.alpha = 1
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+            }
+        } else {
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+              //  fromViewController.view.alpha = 10
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+                    //fromViewController.view.removeFromSuperview()
+            }
+        }
+    }
+
+    
+    @IBAction func didPressCompose(sender: AnyObject)
+    {
+        performSegueWithIdentifier("composeSegue", sender: self)
+    
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+    {
+        var destinationVC = segue.destinationViewController as UIViewController
+        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationVC.transitioningDelegate = self
     }
     
 
