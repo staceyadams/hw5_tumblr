@@ -14,6 +14,9 @@ class ComposeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +34,9 @@ class ComposeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func didPressNevermind(sender: AnyObject)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

@@ -90,21 +90,25 @@ class TabBarViewController: UIViewController {
         contentView.addSubview(searchView)
         searchVC.didMoveToParentViewController(self)
         currentVC = searchVC
+        
+
+        
+        
     }
     
-    @IBAction func didPressCompose(sender: AnyObject)
-    {
-        removeChildView(currentVC)
-        currentTabButton.selected = false
-        currentTabButton = composeTabButton
-        currentTabButton.selected = true
-        addChildViewController(composeVC)
-        var composeView = composeVC.view
-        composeView.frame = contentView.frame
-        contentView.addSubview(composeView)
-        composeVC.didMoveToParentViewController(self)
-        currentVC = composeVC
-    }
+//    @IBAction func didPressCompose(sender: AnyObject)
+//    {
+//        removeChildView(currentVC)
+//        currentTabButton.selected = false
+//        currentTabButton = composeTabButton
+//        currentTabButton.selected = true
+//        addChildViewController(composeVC)
+//        var composeView = composeVC.view
+//        composeView.frame = contentView.frame
+//        contentView.addSubview(composeView)
+//        composeVC.didMoveToParentViewController(self)
+//        currentVC = composeVC
+//    }
     
     @IBAction func didPressAccount(sender: AnyObject)
     {
