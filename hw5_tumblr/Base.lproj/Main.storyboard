@@ -72,7 +72,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.25882352941176467" blue="0.33725490196078434" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.1764705882352941" green="0.27450980392156865" blue="0.36078431372549019" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="X2B-Gr-Gx1" userLabel="contentView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
@@ -83,7 +83,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="accountTabButton" destination="9IR-kq-7Si" id="Nyj-n3-fPE"/>
+                        <outlet property="composeTabButton" destination="jHf-v4-KFg" id="Idh-Tq-A1e"/>
                         <outlet property="contentView" destination="X2B-Gr-Gx1" id="emC-YU-T6q"/>
+                        <outlet property="homeTabButton" destination="A7J-hN-bMY" id="GQ4-yY-3ip"/>
+                        <outlet property="searchTabButton" destination="sRP-fr-Tnc" id="Wdf-gR-fHC"/>
+                        <outlet property="trendingTabButton" destination="DaJ-tN-8UO" id="9Rs-uT-LL6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -98,16 +103,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="home" id="pvN-YA-6WN">
+                                <rect key="frame" x="-1" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_spinner" id="8mh-6r-xcP">
                                 <rect key="frame" x="86" y="161" width="146" height="146"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_overlay" id="MTb-Ha-dCl">
                                 <rect key="frame" x="0.0" y="258" width="320" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="home" id="pvN-YA-6WN">
-                                <rect key="frame" x="-1" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z6v-MI-J3Q">
