@@ -79,11 +79,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explore_popup" id="j0x-Mt-NSj">
+                                <rect key="frame" x="-2" y="450" width="185" height="77"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="X2B-Gr-Gx1" id="emC-YU-T6q"/>
+                        <outlet property="exploreBobble" destination="j0x-Mt-NSj" id="5LJ-RH-cTz"/>
                         <outletCollection property="buttons" destination="A7J-hN-bMY" collectionClass="NSMutableArray" id="VWe-bJ-oK5"/>
                         <outletCollection property="buttons" destination="sRP-fr-Tnc" collectionClass="NSMutableArray" id="kiZ-lA-qrF"/>
                         <outletCollection property="buttons" destination="9IR-kq-7Si" collectionClass="NSMutableArray" id="hXh-hS-5zB"/>
@@ -356,12 +361,6 @@
                     <view key="view" contentMode="scaleToFill" id="F8f-zv-aNT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explore_popup" id="j0x-Mt-NSj">
-                                <rect key="frame" x="-4" y="450" width="185" height="77"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lo-d8-H9n" userLabel="First Responder" sceneMemberID="firstResponder"/>

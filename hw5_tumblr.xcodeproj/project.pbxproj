@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5614D1D1AAC1C00003C8E25 /* SearchBobbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5614D1C1AAC1C00003C8E25 /* SearchBobbleViewController.swift */; };
 		B56954781AA6B0690060B47F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56954771AA6B0690060B47F /* AppDelegate.swift */; };
 		B569547A1AA6B0690060B47F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56954791AA6B0690060B47F /* ViewController.swift */; };
 		B569547D1AA6B0690060B47F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B569547B1AA6B0690060B47F /* Main.storyboard */; };
@@ -21,6 +20,7 @@
 		B56954A01AA6B5240060B47F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B569549F1AA6B5240060B47F /* AccountViewController.swift */; };
 		B56954A21AA6B52B0060B47F /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56954A11AA6B52B0060B47F /* TrendingViewController.swift */; };
 		B56954A41AA6BD480060B47F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56954A31AA6BD480060B47F /* LogInViewController.swift */; };
+		B5A27DE61AAC331700052951 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A27DE51AAC331700052951 /* Images-2.xcassets */; };
 		B5FD45541AABC7E6006C12E0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD45531AABC7E6006C12E0 /* Common.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B5614D1C1AAC1C00003C8E25 /* SearchBobbleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBobbleViewController.swift; sourceTree = "<group>"; };
 		B56954721AA6B0690060B47F /* hw5_tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw5_tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56954761AA6B0690060B47F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B56954771AA6B0690060B47F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		B569549F1AA6B5240060B47F /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B56954A11AA6B52B0060B47F /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 		B56954A31AA6BD480060B47F /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		B5A27DE51AAC331700052951 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		B5FD45531AABC7E6006C12E0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,8 +108,8 @@
 				B56954971AA6B17C0060B47F /* TabBarViewController.swift */,
 				B569547E1AA6B0690060B47F /* Images.xcassets */,
 				B56954801AA6B0690060B47F /* LaunchScreen.xib */,
+				B5A27DE51AAC331700052951 /* Images-2.xcassets */,
 				B56954751AA6B0690060B47F /* Supporting Files */,
-				B5614D1C1AAC1C00003C8E25 /* SearchBobbleViewController.swift */,
 			);
 			path = hw5_tumblr;
 			sourceTree = "<group>";
@@ -221,6 +221,7 @@
 			files = (
 				B569547D1AA6B0690060B47F /* Main.storyboard in Resources */,
 				B56954821AA6B0690060B47F /* LaunchScreen.xib in Resources */,
+				B5A27DE61AAC331700052951 /* Images-2.xcassets in Resources */,
 				B569547F1AA6B0690060B47F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +249,6 @@
 				B569549E1AA6B51B0060B47F /* ComposeViewController.swift in Sources */,
 				B56954781AA6B0690060B47F /* AppDelegate.swift in Sources */,
 				B5FD45541AABC7E6006C12E0 /* Common.swift in Sources */,
-				B5614D1D1AAC1C00003C8E25 /* SearchBobbleViewController.swift in Sources */,
 				B569549A1AA6B3D80060B47F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +371,8 @@
 		B56954921AA6B0690060B47F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				INFOPLIST_FILE = hw5_tumblr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,7 +382,8 @@
 		B56954931AA6B0690060B47F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				INFOPLIST_FILE = hw5_tumblr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

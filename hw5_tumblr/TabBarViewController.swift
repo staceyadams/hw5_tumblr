@@ -10,6 +10,7 @@ import UIKit
 
 class TabBarViewController: UIViewController {
 
+    @IBOutlet weak var exploreBobble: UIImageView!
     @IBOutlet weak var contentView: UIView!
     // hook up buttons as an outlet collection:
     @IBOutlet var buttons: [UIButton]!
@@ -22,7 +23,6 @@ class TabBarViewController: UIViewController {
     var composeVC: UIViewController!
     var accountVC: UIViewController!
     var trendingVC: UIViewController!
-    var searchBobbleVC: SearchBobbleViewController!
     
     
     override func viewDidLoad()
@@ -35,7 +35,6 @@ class TabBarViewController: UIViewController {
         searchVC = storyboard.instantiateViewControllerWithIdentifier("searchStory") as UIViewController
         accountVC = storyboard.instantiateViewControllerWithIdentifier("accountStory") as UIViewController
         trendingVC = storyboard.instantiateViewControllerWithIdentifier("trendingStory") as UIViewController
-        searchBobbleVC = storyboard.instantiateViewControllerWithIdentifier("searchBobbleStory") as SearchBobbleViewController
         
         viewControllersArray = [homeVC, searchVC, accountVC, trendingVC]
         
@@ -43,7 +42,7 @@ class TabBarViewController: UIViewController {
         // show home as the default on initial load
         didPressTabButton(buttons[0])
         
-        
+        exploreBobbleAnimate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +70,8 @@ class TabBarViewController: UIViewController {
         tabContentView.frame = contentView.frame // sets size of content view to fit into container view
         contentView.addSubview(tabContentView) // get view from the content VC and put it into our container on the tab VC
         viewControllersArray[selectedIndex].didMoveToParentViewController(self) // attaches child VC to tab bar controller
+        
+        exploreBobble.hidden = (selectedIndex==1)
     
     }
     
@@ -85,6 +86,26 @@ class TabBarViewController: UIViewController {
     {
         performSegueWithIdentifier("composeSegue", sender: self)
     
+    }
+    
+    func exploreBobbleAnimate()
+    {
+        // Animation with damping and velocity
+        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 40, options: nil, animations:
+            { () -> Void in
+            // set position of bobble
+            self.exploreBobble.center.y = 490
+            })
+            { (finished: Bool) -> Void in
+                // Here we use autoreverse and repeat to get the bobble motion
+                UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.AllowUserInteraction, animations:
+                    { () -> Void in
+                    self.exploreBobble.center.y = 500
+                    })
+                    { (Bool) -> Void in
+                    }
+                
+            }
     }
 
 }
