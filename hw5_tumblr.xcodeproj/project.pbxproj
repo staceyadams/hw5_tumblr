@@ -20,6 +20,7 @@
 		B56954A01AA6B5240060B47F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B569549F1AA6B5240060B47F /* AccountViewController.swift */; };
 		B56954A21AA6B52B0060B47F /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56954A11AA6B52B0060B47F /* TrendingViewController.swift */; };
 		B56954A41AA6BD480060B47F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56954A31AA6BD480060B47F /* LogInViewController.swift */; };
+		B5FD45541AABC7E6006C12E0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD45531AABC7E6006C12E0 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		B569549F1AA6B5240060B47F /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B56954A11AA6B52B0060B47F /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 		B56954A31AA6BD480060B47F /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		B5FD45531AABC7E6006C12E0 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		B56954741AA6B0690060B47F /* hw5_tumblr */ = {
 			isa = PBXGroup;
 			children = (
+				B5FD45531AABC7E6006C12E0 /* Common.swift */,
 				B56954771AA6B0690060B47F /* AppDelegate.swift */,
 				B56954791AA6B0690060B47F /* ViewController.swift */,
 				B569547B1AA6B0690060B47F /* Main.storyboard */,
@@ -241,6 +244,7 @@
 				B56954981AA6B17C0060B47F /* TabBarViewController.swift in Sources */,
 				B569549E1AA6B51B0060B47F /* ComposeViewController.swift in Sources */,
 				B56954781AA6B0690060B47F /* AppDelegate.swift in Sources */,
+				B5FD45541AABC7E6006C12E0 /* Common.swift in Sources */,
 				B569549A1AA6B3D80060B47F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +437,7 @@
 				B56954931AA6B0690060B47F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B56954941AA6B0690060B47F /* Build configuration list for PBXNativeTarget "hw5_tumblrTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +446,7 @@
 				B56954961AA6B0690060B47F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

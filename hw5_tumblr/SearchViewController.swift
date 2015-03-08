@@ -14,7 +14,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loadingDots: UIImageView!
     @IBOutlet weak var searchFeedImage: UIImageView!
-    
+    var images = UIImage.animatedImageNamed("loading-", duration: 0.7)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,25 +23,15 @@ class SearchViewController: UIViewController {
         
         scrollView.contentSize = searchFeedImage.frame.size
         
-        loadingDots.animationImages = [UIImage]()
-        for var index = 1; index < 4; index++
-        {
-            var frameName = String(format: "loading-%01d", index)
-            loadingDots.animationImages?.append(UIImage(named: frameName)!)
-        }
-        
-        loadingDots.animationDuration = 1
-        loadingDots.startAnimating()
+        loadingDots.image = images
         searchFeedImage.hidden = true
-        
-        // hacky delay. why doesn't using delay work?
-        UIView.animateWithDuration(2.5, animations: { () -> Void in
-            self.loadingDots.alpha = 0.99
-        })  { (finished: Bool) -> Void in
+
+        delay(2, { () -> () in
             self.loadingDots.stopAnimating()
             self.searchFeedImage.hidden = false
             self.loadingDots.hidden = true
-        }
+        })
+        
         
     }
 

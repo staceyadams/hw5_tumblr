@@ -8,9 +8,7 @@
 
 import UIKit
 
-class TabBarViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-    
-    var isPresenting: Bool = true
+class TabBarViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
     // hook up buttons as an outlet collection:
@@ -25,9 +23,6 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     var accountVC: UIViewController!
     var trendingVC: UIViewController!
     
-//    var currentVC: UIViewController!
-//    var currentTabButton: UIButton!
-    
     
     override func viewDidLoad()
     {
@@ -37,7 +32,6 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeVC = storyboard.instantiateViewControllerWithIdentifier("homeStory") as UIViewController
         searchVC = storyboard.instantiateViewControllerWithIdentifier("searchStory") as UIViewController
-        composeVC = storyboard.instantiateViewControllerWithIdentifier("composeStory") as UIViewController
         accountVC = storyboard.instantiateViewControllerWithIdentifier("accountStory") as UIViewController
         trendingVC = storyboard.instantiateViewControllerWithIdentifier("trendingStory") as UIViewController
         
@@ -59,7 +53,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
 
     @IBAction func didPressTabButton(sender: AnyObject)
     {
-        // println(sender.tag)
+        // println(sender.tag) // verify the tags we set in the storyboard on the buttons
         
         // remove the stuff from the existing view
         removeChildView(viewControllersArray[selectedIndex]) // remove existing view before adding a new view. Uses func created below.
@@ -78,82 +72,17 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     }
     
-    
     func removeChildView(content: UIViewController)
     {
         content.willMoveToParentViewController(nil)
         content.view.removeFromSuperview()
         content.removeFromParentViewController()
     }
-    
-    
-    
-    // CUSTOM TRANSITION
-    
-    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = true
-        return self
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = false
-        return self
-    }
-    
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.4
-    }
-    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        println("animating transition")
-        var containerView = transitionContext.containerView()
-        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        
-        if (isPresenting) {
-            containerView.addSubview(toViewController.view)
-            toViewController.view.alpha = 0
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                toViewController.view.alpha = 1
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-            }
-        } else {
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-              //  fromViewController.view.alpha = 10
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-                    //fromViewController.view.removeFromSuperview()
-            }
-        }
-    }
 
-    
     @IBAction func didPressCompose(sender: AnyObject)
     {
         performSegueWithIdentifier("composeSegue", sender: self)
     
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
-    {
-        var destinationVC = segue.destinationViewController as UIViewController
-        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
-        destinationVC.transitioningDelegate = self
-    }
-    
-
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
