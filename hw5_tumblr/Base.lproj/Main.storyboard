@@ -103,12 +103,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="pLp-Qr-AMg">
-                                <rect key="frame" x="0.0" y="-1" width="320" height="524"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="home_bg" id="pvN-YA-6WN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="pLp-Qr-AMg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="home" id="pvN-YA-6WN">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_screen_icon" id="hzh-WU-WSf">
+                                        <rect key="frame" x="87" y="160" width="146" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_spinner" id="8mh-6r-xcP">
@@ -116,28 +120,33 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_overlay" id="MTb-Ha-dCl">
-                                        <rect key="frame" x="0.0" y="255" width="320" height="100"/>
+                                        <rect key="frame" x="0.0" y="258" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z6v-MI-J3Q">
-                                        <rect key="frame" x="255" y="25" width="62" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="ukt-n1-7ut" kind="modal" id="vxz-rN-onj"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z6v-MI-J3Q">
+                                <rect key="frame" x="260" y="30" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLogin:" destination="2jQ-5J-UDh" eventType="touchUpInside" id="PZt-az-49k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.2901960784" blue="0.37647058820000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="homeImage" destination="pvN-YA-6WN" id="pKI-lx-Nyi"/>
+                        <outlet property="scrollView" destination="pLp-Qr-AMg" id="dfV-Ja-O0S"/>
+                        <segue destination="ukt-n1-7ut" kind="modal" identifier="loginSegue" id="JKk-WE-gdH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5C-Zt-bHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-504" y="1136"/>
+            <point key="canvasLocation" x="-491" y="1136"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="20I-QT-lFw">
@@ -216,6 +225,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bMC-Cf-Ima">
                                 <rect key="frame" x="22" y="105" width="75" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.21960784310000001" green="0.2901960784" blue="0.37647058820000001" alpha="1" colorSpace="deviceRGB"/>
                                 <state key="normal" image="text_icon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -235,7 +245,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.21960784310000001" green="0.2901960784" blue="0.37647058820000001" alpha="0.80000000000000004" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.2901960784" blue="0.37647058820000001" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
                         <outlet property="chatButton" destination="5zo-Sb-0HQ" id="40V-0n-S3k"/>
@@ -308,26 +318,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="fcW-YU-AS7">
-                                <rect key="frame" x="138" y="180" width="123" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_form" id="tdf-xq-Kqo">
+                                <rect key="frame" x="10" y="146" width="300" height="132"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="S8f-5P-oVm">
+                                <rect key="frame" x="10" y="236" width="149" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCancel:" destination="ukt-n1-7ut" eventType="touchUpInside" id="O7d-qS-10U"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="pxE-QC-8ZH">
+                                <rect key="frame" x="10" y="152" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.68340739890000002" blue="0.8525323158" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.2901960784" blue="0.37647058820000001" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="pxE-QC-8ZH" id="D6j-xj-Nac"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZ2-U2-QL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-504" y="1806"/>
+            <point key="canvasLocation" x="-491" y="1810"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search Bobble View Controller-->
         <scene sceneID="GVW-VG-fNZ">
             <objects>
-                <viewController storyboardIdentifier="searchBubbleStory" id="xGy-ju-oVs" customClass="SearchViewController" customModule="hw5_tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchBobbleStory" id="xGy-ju-oVs" customClass="SearchBobbleViewController" customModule="hw5_tumblr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F8f-zv-aNT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lo-d8-H9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-107" y="1792"/>
+            <point key="canvasLocation" x="-107" y="1810"/>
         </scene>
     </scenes>
     <resources>
@@ -351,13 +376,15 @@
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
         <image name="explore_popup" width="185" height="77"/>
-        <image name="home" width="320" height="524"/>
+        <image name="home_bg" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>
+        <image name="home_screen_icon" width="74" height="74"/>
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
         <image name="loading-1" width="61" height="19"/>
+        <image name="login_form" width="300" height="132"/>
         <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>

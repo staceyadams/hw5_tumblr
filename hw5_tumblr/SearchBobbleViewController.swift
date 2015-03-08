@@ -1,24 +1,19 @@
 //
-//  HomeViewController.swift
+//  SearchBobbleViewController.swift
 //  hw5_tumblr
 //
-//  Created by Stacey Adams on 3/3/15.
+//  Created by Stacey Adams on 3/7/15.
 //  Copyright (c) 2015 Stacey Adams. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SearchBobbleViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var homeImage: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        scrollView.contentSize = CGSize(width: 320, height: 534)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +32,4 @@ class HomeViewController: UIViewController {
     }
     */
 
-    @IBAction func didPressLogin(sender: AnyObject)
-    {
-        performSegueWithIdentifier("loginSegue", sender: self)
-    }
 }

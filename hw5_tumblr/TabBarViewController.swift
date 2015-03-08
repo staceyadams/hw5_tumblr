@@ -22,6 +22,7 @@ class TabBarViewController: UIViewController {
     var composeVC: UIViewController!
     var accountVC: UIViewController!
     var trendingVC: UIViewController!
+    var searchBobbleVC: SearchBobbleViewController!
     
     
     override func viewDidLoad()
@@ -34,6 +35,7 @@ class TabBarViewController: UIViewController {
         searchVC = storyboard.instantiateViewControllerWithIdentifier("searchStory") as UIViewController
         accountVC = storyboard.instantiateViewControllerWithIdentifier("accountStory") as UIViewController
         trendingVC = storyboard.instantiateViewControllerWithIdentifier("trendingStory") as UIViewController
+        searchBobbleVC = storyboard.instantiateViewControllerWithIdentifier("searchBobbleStory") as SearchBobbleViewController
         
         viewControllersArray = [homeVC, searchVC, accountVC, trendingVC]
         

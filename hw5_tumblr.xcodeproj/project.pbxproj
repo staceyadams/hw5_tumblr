@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5614D1D1AAC1C00003C8E25 /* SearchBobbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5614D1C1AAC1C00003C8E25 /* SearchBobbleViewController.swift */; };
 		B56954781AA6B0690060B47F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56954771AA6B0690060B47F /* AppDelegate.swift */; };
 		B569547A1AA6B0690060B47F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56954791AA6B0690060B47F /* ViewController.swift */; };
 		B569547D1AA6B0690060B47F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B569547B1AA6B0690060B47F /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5614D1C1AAC1C00003C8E25 /* SearchBobbleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBobbleViewController.swift; sourceTree = "<group>"; };
 		B56954721AA6B0690060B47F /* hw5_tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw5_tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56954761AA6B0690060B47F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B56954771AA6B0690060B47F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				B569547E1AA6B0690060B47F /* Images.xcassets */,
 				B56954801AA6B0690060B47F /* LaunchScreen.xib */,
 				B56954751AA6B0690060B47F /* Supporting Files */,
+				B5614D1C1AAC1C00003C8E25 /* SearchBobbleViewController.swift */,
 			);
 			path = hw5_tumblr;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				B569549E1AA6B51B0060B47F /* ComposeViewController.swift in Sources */,
 				B56954781AA6B0690060B47F /* AppDelegate.swift in Sources */,
 				B5FD45541AABC7E6006C12E0 /* Common.swift in Sources */,
+				B5614D1D1AAC1C00003C8E25 /* SearchBobbleViewController.swift in Sources */,
 				B569549A1AA6B3D80060B47F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
