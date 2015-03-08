@@ -17,6 +17,7 @@ Week 5 homework assignment for CodePath iOS Bootcamp: http://courses.codepath.co
 ## Walkthrough of all user stories:
 ![Video Walkthrough]
 (hw5_tumblr_walkthrough.gif)
+
 \* bounce on explore bubble isn't actually this fast! It just looks like it in the gif.
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
